@@ -26,3 +26,10 @@ class DataTransformationConfig:
     transformation_object_file_path: Path
     imputer_params: ConfigBox
     target_col: str
+
+@dataclass
+class ModelTrainerConfig:
+    root_dir: Path
+    trained_model_file_path: Path
+    expected_accuracy: float
+    final_model_file_path: Path

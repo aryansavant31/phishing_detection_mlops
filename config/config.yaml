@@ -6,3 +6,6 @@ data_transformation:
     n_neighbors: 3
     weights: uniform
 
+model_trainer:
+  expected_accuracy: 0.7
+

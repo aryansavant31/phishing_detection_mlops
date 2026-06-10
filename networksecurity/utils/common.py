@@ -62,7 +62,19 @@ def save_numpy_array(file_path: str, array: np.array):
             np.save(file_obj, array)
         logger.info(f"Numpy file saved sucessfully at {file_path}")
     except Exception as e:
-        raise NetworkSecurityException(e, sys) from e
+        raise NetworkSecurityException(e, sys)
+    
+def load_numpy_array(file_path: str) -> np.ndarray:
+    try:
+        # check if file exists
+        if os.path.exists(file_path):
+            data_arr = np.load(file_path)
+            return data_arr
+        else:
+            raise ValueError(f"The filepath {file_path} is not found")
+    except Exception as e:
+        raise NetworkSecurityException(e, sys)
+
     
 def save_object(file_path: str, obj: object) -> None:
     try:

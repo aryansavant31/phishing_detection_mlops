@@ -8,4 +8,9 @@ python-box
 types-PyYAML
 PyYAML
 scikit-learn
+mlflow
+dagshub
+fastapi
+uvicorn
+python-multipart
 # -e .

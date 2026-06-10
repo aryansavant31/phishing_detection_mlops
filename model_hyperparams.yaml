@@ -1,0 +1,20 @@
+decision_tree:
+  criterion: [gini, entropy, log_loss]
+
+random_forest:
+  n_estimators: [8, 16, 128, 256]
+
+gradient_boosting:
+  learning_rate: [.1, .01, .005, .001]
+  subsample: [0.6,0.7,0.75,0.85,0.9]
+  n_estimators: [8, 16, 128, 256]
+
+logistic_regression:
+  penalty: ['l2']
+
+ada_boost:
+  learning_rate: [.1, .01, .005, .001]
+  n_estimators: [8, 16, 128, 256]
+
+k_neighbors:
+ n_neighbors: [5, 10, 20, 100]

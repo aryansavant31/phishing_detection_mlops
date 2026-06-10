@@ -1,8 +1,9 @@
 import os
-from networksecurity.constants import (general, data_ingestion, data_validation, data_transformation)
+from networksecurity.constants import (general, data_ingestion, data_validation, 
+                                       data_transformation, model_trainer)
 from networksecurity.utils.common import read_yaml, create_directories
 from networksecurity.entity.config_entity import (DataIngestionConfig, DataValidationConfig, 
-                                                  DataTransformationConfig)
+                                                  DataTransformationConfig, ModelTrainerConfig)
 from datetime import datetime
 
 class ConfigurationManager:
@@ -23,9 +24,15 @@ class ConfigurationManager:
 
         # make paths
         data_ingestion_root = os.path.join(self.artifact_root, data_ingestion.ROOT_DIR)
-        feature_store_file_path = os.path.join(data_ingestion_root, data_ingestion.FEATURE_STORE_DIR, data_ingestion.RAW_DATA_FILE_NAME)
-        train_file_path = os.path.join(data_ingestion_root, data_ingestion.INGESTED_DIR, data_ingestion.TRAIN_FILE_NAME)
-        test_file_path = os.path.join(data_ingestion_root, data_ingestion.INGESTED_DIR, data_ingestion.TEST_FILE_NAME)
+        feature_store_file_path = os.path.join(data_ingestion_root, 
+                                               data_ingestion.FEATURE_STORE_DIR, 
+                                               data_ingestion.RAW_DATA_FILE_NAME)
+        train_file_path = os.path.join(data_ingestion_root, 
+                                       data_ingestion.INGESTED_DIR, 
+                                       data_ingestion.TRAIN_FILE_NAME)
+        test_file_path = os.path.join(data_ingestion_root, 
+                                      data_ingestion.INGESTED_DIR, 
+                                      data_ingestion.TEST_FILE_NAME)
 
         data_ingestion_config = DataIngestionConfig(
             root_dir = data_ingestion_root,
@@ -44,8 +51,12 @@ class ConfigurationManager:
         """
         # make paths
         data_validation_root = os.path.join(self.artifact_root, data_validation.ROOT_DIR)
-        valid_status_file_path = os.path.join(data_validation_root, data_validation.VALID_STATUS_DIR, data_validation.VALID_STATUS_FILE_NAME)
-        drift_report_file_path = os.path.join(data_validation_root, data_validation.DRIFT_REPORT_DIR, data_validation.DRIFT_REPORT_FILE_NAME)
+        valid_status_file_path = os.path.join(data_validation_root, 
+                                              data_validation.VALID_STATUS_DIR, 
+                                              data_validation.VALID_STATUS_FILE_NAME)
+        drift_report_file_path = os.path.join(data_validation_root, 
+                                              data_validation.DRIFT_REPORT_DIR, 
+                                              data_validation.DRIFT_REPORT_FILE_NAME)
 
         data_validation_config = DataValidationConfig(
             root_dir=data_validation_root,
@@ -82,3 +93,21 @@ class ConfigurationManager:
         )
 
         return data_transformation_config
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        """
+        Assign the ModelTrainerConfig attribute
+        """
+        config = self.config.model_trainer
+        # make paths
+        model_trainer_root = os.path.join(self.artifact_root, model_trainer.ROOT_DIR)
+        trained_model_file_path = os.path.join(model_trainer_root, 
+                                               model_trainer.TRAINED_MODEL_DIR,
+                                               model_trainer.TRAINED_MODEL_FILE_NAME)
+        model_trainer_config = ModelTrainerConfig(
+            root_dir = model_trainer_root,
+            trained_model_file_path = trained_model_file_path,
+            expected_accuracy = config.expected_accuracy,
+            final_model_file_path = model_trainer.FINAL_MODEL_PATH
+        )
+        return model_trainer_config
