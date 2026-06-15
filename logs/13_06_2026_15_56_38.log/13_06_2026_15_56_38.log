@@ -1,0 +1,8 @@
+[ 2026-06-13 15:56:46,495 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:56:46,503 ] 107 helpers.py - INFO -Accessing as aryansavant31
+[ 2026-06-13 15:56:54,173 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/repos/aryansavant31/network_security "HTTP/1.1 200 OK"
+[ 2026-06-13 15:57:00,949 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:57:00,950 ] 107 helpers.py - INFO -Initialized MLflow to track repo "aryansavant31/network_security"
+[ 2026-06-13 15:57:00,958 ] 107 helpers.py - INFO -Repository aryansavant31/network_security initialized!
+[ 2026-06-13 15:57:01,117 ] 50 common.py - INFO -Creating directory at prediction_artifacts\13_06_2026_15_57_00
+[ 2026-06-13 15:57:03,535 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb

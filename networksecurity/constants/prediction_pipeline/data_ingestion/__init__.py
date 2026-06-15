@@ -1,0 +1,8 @@
+COLLECTION_NAME = "NetworkData"
+DATABASE_NAME = "AryanSavant"
+ROOT_DIR = "1_data_ingestion"
+INGESTED_DIR = "ingested"
+RAW_INPUT_FILE_NAME = "raw_input.csv"
+RAW_INPUT_DIR = "network_data"
+INPUT_FILE_NAME = "input.csv"
+TRAIN_FILE_NAME = "train.csv"

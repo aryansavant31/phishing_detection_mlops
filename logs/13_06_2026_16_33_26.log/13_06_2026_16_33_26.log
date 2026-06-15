@@ -1,0 +1,16 @@
+[ 2026-06-13 16:33:32,575 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 16:33:32,585 ] 107 helpers.py - INFO -Accessing as aryansavant31
+[ 2026-06-13 16:33:38,977 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/repos/aryansavant31/network_security "HTTP/1.1 200 OK"
+[ 2026-06-13 16:33:39,546 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 16:33:39,549 ] 107 helpers.py - INFO -Initialized MLflow to track repo "aryansavant31/network_security"
+[ 2026-06-13 16:33:39,550 ] 107 helpers.py - INFO -Repository aryansavant31/network_security initialized!
+[ 2026-06-13 16:33:39,721 ] 50 common.py - INFO -Creating directory at prediction_artifacts\13_06_2026_16_33_39
+[ 2026-06-13 16:33:42,173 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb
+[ 2026-06-13 16:33:42,307 ] 25 common.py - INFO -yaml file: schema.yaml loaded successfully
+[ 2026-06-13 16:33:42,400 ] 65 __init__.py - INFO -Train data does NOT contain all columns.
+
+[ 2026-06-13 16:33:42,400 ] 68 __init__.py - INFO -Test data does NOT contain all columns.
+
+[ 2026-06-13 16:33:42,483 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_33_39\2_data_validation\drift_report\report.yaml
+[ 2026-06-13 16:33:42,483 ] 79 __init__.py - INFO -Incoming data is not valid
+[ 2026-06-13 16:33:42,486 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_33_39\2_data_validation\valid_status\status.yaml

@@ -1,0 +1,11 @@
+[ 2026-06-13 15:58:50,839 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:58:50,845 ] 107 helpers.py - INFO -Accessing as aryansavant31
+[ 2026-06-13 15:58:54,809 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/repos/aryansavant31/network_security "HTTP/1.1 200 OK"
+[ 2026-06-13 15:59:00,633 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:59:00,636 ] 107 helpers.py - INFO -Initialized MLflow to track repo "aryansavant31/network_security"
+[ 2026-06-13 15:59:00,637 ] 107 helpers.py - INFO -Repository aryansavant31/network_security initialized!
+[ 2026-06-13 15:59:00,811 ] 50 common.py - INFO -Creating directory at prediction_artifacts\13_06_2026_15_59_00
+[ 2026-06-13 15:59:03,333 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb
+[ 2026-06-13 15:59:03,487 ] 25 common.py - INFO -yaml file: schema.yaml loaded successfully
+[ 2026-06-13 15:59:03,563 ] 68 __init__.py - INFO -Train data does NOT contain all columns.
+

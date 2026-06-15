@@ -1,5 +1,5 @@
-from networksecurity.entity.artifact_entity import DataValidationArtifact, DataTransformationArtifact
-from networksecurity.entity.config_entity import DataTransformationConfig
+from networksecurity.entity.training_pipeline.artifact_entity import DataValidationArtifact, DataTransformationArtifact
+from networksecurity.entity.training_pipeline.config_entity import DataTransformationConfig
 from networksecurity.exceptions.custom_exception import NetworkSecurityException
 from networksecurity.logging.logger import logger
 import pandas as pd

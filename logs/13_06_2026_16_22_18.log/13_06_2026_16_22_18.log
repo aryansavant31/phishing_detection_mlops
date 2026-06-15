@@ -1,0 +1,62 @@
+[ 2026-06-13 16:22:23,188 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 16:22:23,199 ] 107 helpers.py - INFO -Accessing as aryansavant31
+[ 2026-06-13 16:22:23,659 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/repos/aryansavant31/network_security "HTTP/1.1 200 OK"
+[ 2026-06-13 16:22:24,102 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 16:22:24,104 ] 107 helpers.py - INFO -Initialized MLflow to track repo "aryansavant31/network_security"
+[ 2026-06-13 16:22:24,106 ] 107 helpers.py - INFO -Repository aryansavant31/network_security initialized!
+[ 2026-06-13 16:22:24,293 ] 50 common.py - INFO -Creating directory at prediction_artifacts\13_06_2026_16_22_24
+[ 2026-06-13 16:22:26,905 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb
+[ 2026-06-13 16:22:27,053 ] 25 common.py - INFO -yaml file: schema.yaml loaded successfully
+[ 2026-06-13 16:22:27,200 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_22_24\2_data_validation\drift_report\report.yaml
+[ 2026-06-13 16:22:27,202 ] 76 __init__.py - INFO -The incoming data is valid
+[ 2026-06-13 16:22:27,204 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_22_24\2_data_validation\valid_status\status.yaml
+[ 2026-06-13 16:26:33,249 ] 25 common.py - INFO -yaml file: config\config.yaml loaded successfully
+[ 2026-06-13 16:26:33,252 ] 50 common.py - INFO -Creating directory at training_artifacts\13_06_2026_16_22_20
+[ 2026-06-13 16:26:33,252 ] 24 training_pipeline.py - INFO ->>>>> Starting data ingestion <<<<<
+[ 2026-06-13 16:26:35,487 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb
+[ 2026-06-13 16:26:35,629 ] 49 __init__.py - INFO -Export raw data into training_artifacts\13_06_2026_16_22_20\1_data_ingestion\feature_store
+[ 2026-06-13 16:26:35,639 ] 60 __init__.py - INFO -Split data into train and test sets
+[ 2026-06-13 16:26:35,774 ] 68 __init__.py - INFO -Exported train and test data to training_artifacts\13_06_2026_16_22_20\1_data_ingestion\ingested
+[ 2026-06-13 16:26:35,776 ] 28 training_pipeline.py - INFO - >>>>> Data ingestion completed <<<<<
+[ 2026-06-13 16:26:35,776 ] 36 training_pipeline.py - INFO ->>>>> Starting data validation <<<<<
+[ 2026-06-13 16:26:35,785 ] 25 common.py - INFO -yaml file: schema.yaml loaded successfully
+[ 2026-06-13 16:26:36,017 ] 40 common.py - INFO -yaml file saved sucessfully at training_artifacts\13_06_2026_16_22_20\2_data_validation\drift_report\report.yaml
+[ 2026-06-13 16:26:36,017 ] 76 __init__.py - INFO -The incoming data is valid
+[ 2026-06-13 16:26:36,020 ] 40 common.py - INFO -yaml file saved sucessfully at training_artifacts\13_06_2026_16_22_20\2_data_validation\valid_status\status.yaml
+[ 2026-06-13 16:26:36,022 ] 41 training_pipeline.py - INFO ->>>>> Data validation completed <<<<<
+[ 2026-06-13 16:26:36,022 ] 49 training_pipeline.py - INFO ->>>>> Starting data transformation <<<<<
+[ 2026-06-13 16:26:36,078 ] 50 data_transformation.py - INFO -Initilize KNN imputer with parameters: {'n_neighbors': 3, 'weights': 'uniform'}
+[ 2026-06-13 16:26:36,108 ] 63 common.py - INFO -Numpy file saved sucessfully at training_artifacts\13_06_2026_16_22_20\3_data_transformation\transformed_data\train.npy
+[ 2026-06-13 16:26:36,109 ] 63 common.py - INFO -Numpy file saved sucessfully at training_artifacts\13_06_2026_16_22_20\3_data_transformation\transformed_data\test.npy
+[ 2026-06-13 16:26:36,115 ] 84 common.py - INFO -Object file saved sucessfully at training_artifacts\13_06_2026_16_22_20\3_data_transformation\transformation_object\preprocessing_config.pkl
+[ 2026-06-13 16:26:36,120 ] 54 training_pipeline.py - INFO ->>>>> Data transformation completed <<<<<
+[ 2026-06-13 16:26:36,121 ] 62 training_pipeline.py - INFO ->>>>> Starting model trainer <<<<<
+[ 2026-06-13 16:26:36,153 ] 25 common.py - INFO -yaml file: model_hyperparams.yaml loaded successfully
+[ 2026-06-13 16:27:49,314 ] 84 common.py - INFO -Object file saved sucessfully at training_artifacts\13_06_2026_16_22_20\4_model_trainer\trained_model\model.pkl
+[ 2026-06-13 16:27:49,325 ] 84 common.py - INFO -Object file saved sucessfully at final_model\classifier.pkl
+[ 2026-06-13 16:27:49,385 ] 105 model_trainer.py - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='training_artifacts\\13_06_2026_16_22_20\\4_model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.991061960309044, precision=0.9895129575476455, recall=0.9926158203520129), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.985025641025641, precision=0.9812014711892113, recall=0.9888797364085667))
+[ 2026-06-13 16:27:49,386 ] 67 training_pipeline.py - INFO ->>>>> Model training completed <<<<<
+[ 2026-06-13 16:28:40,749 ] 50 common.py - INFO -Creating directory at prediction_artifacts\13_06_2026_16_22_24
+[ 2026-06-13 16:28:43,042 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb
+[ 2026-06-13 16:28:43,173 ] 25 common.py - INFO -yaml file: schema.yaml loaded successfully
+[ 2026-06-13 16:28:43,330 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_22_24\2_data_validation\drift_report\report.yaml
+[ 2026-06-13 16:28:43,331 ] 76 __init__.py - INFO -The incoming data is valid
+[ 2026-06-13 16:28:43,332 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_22_24\2_data_validation\valid_status\status.yaml
+[ 2026-06-13 16:30:25,735 ] 50 common.py - INFO -Creating directory at prediction_artifacts\13_06_2026_16_22_24
+[ 2026-06-13 16:30:27,837 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb
+[ 2026-06-13 16:30:27,977 ] 25 common.py - INFO -yaml file: schema.yaml loaded successfully
+[ 2026-06-13 16:30:28,135 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_22_24\2_data_validation\drift_report\report.yaml
+[ 2026-06-13 16:30:28,137 ] 76 __init__.py - INFO -The incoming data is valid
+[ 2026-06-13 16:30:28,139 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_22_24\2_data_validation\valid_status\status.yaml
+[ 2026-06-13 16:30:50,461 ] 50 common.py - INFO -Creating directory at prediction_artifacts\13_06_2026_16_22_24
+[ 2026-06-13 16:30:52,741 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb
+[ 2026-06-13 16:30:52,883 ] 25 common.py - INFO -yaml file: schema.yaml loaded successfully
+[ 2026-06-13 16:30:53,027 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_22_24\2_data_validation\drift_report\report.yaml
+[ 2026-06-13 16:30:53,028 ] 76 __init__.py - INFO -The incoming data is valid
+[ 2026-06-13 16:30:53,029 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_22_24\2_data_validation\valid_status\status.yaml
+[ 2026-06-13 16:30:58,641 ] 50 common.py - INFO -Creating directory at prediction_artifacts\13_06_2026_16_22_24
+[ 2026-06-13 16:31:00,785 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb
+[ 2026-06-13 16:31:00,933 ] 25 common.py - INFO -yaml file: schema.yaml loaded successfully
+[ 2026-06-13 16:31:01,094 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_22_24\2_data_validation\drift_report\report.yaml
+[ 2026-06-13 16:31:01,094 ] 76 __init__.py - INFO -The incoming data is valid
+[ 2026-06-13 16:31:01,095 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_22_24\2_data_validation\valid_status\status.yaml

@@ -1,0 +1,15 @@
+[ 2026-06-13 15:07:08,068 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:07:08,077 ] 107 helpers.py - INFO -Accessing as aryansavant31
+[ 2026-06-13 15:07:12,910 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/repos/aryansavant31/network_security "HTTP/1.1 200 OK"
+[ 2026-06-13 15:07:13,357 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:07:13,358 ] 107 helpers.py - INFO -Initialized MLflow to track repo "aryansavant31/network_security"
+[ 2026-06-13 15:07:13,360 ] 107 helpers.py - INFO -Repository aryansavant31/network_security initialized!
+[ 2026-06-13 15:09:07,908 ] 25 common.py - INFO -yaml file: config\config.yaml loaded successfully
+[ 2026-06-13 15:09:07,909 ] 50 common.py - INFO -Creating directory at training_artifacts\06_13_2026_15_07_05
+[ 2026-06-13 15:09:07,909 ] 24 training_pipeline.py - INFO ->>>>> Starting data ingestion <<<<<
+[ 2026-06-13 15:09:10,656 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb
+[ 2026-06-13 15:09:10,818 ] 49 __init__.py - INFO -Export raw data into training_artifacts\06_13_2026_15_07_05\1_data_ingestion\feature_store
+[ 2026-06-13 15:09:10,828 ] 60 __init__.py - INFO -Split data into train and test sets
+[ 2026-06-13 15:09:11,001 ] 68 __init__.py - INFO -Exported train and test data to training_artifacts\06_13_2026_15_07_05\1_data_ingestion\ingested
+[ 2026-06-13 15:09:11,003 ] 28 training_pipeline.py - INFO - >>>>> Data ingestion completed <<<<<
+[ 2026-06-13 15:09:11,004 ] 36 training_pipeline.py - INFO ->>>>> Starting data validation <<<<<

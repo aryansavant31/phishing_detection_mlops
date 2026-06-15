@@ -5,8 +5,8 @@ import pandas as pd
 from networksecurity.exceptions.custom_exception import NetworkSecurityException
 from networksecurity.logging.logger import logger
 from networksecurity.pipelines.training_pipeline import TrainingPipeline
+from networksecurity.pipelines.prediction_pipeline import PredictionPipeline
 from networksecurity.utils.common import load_object
-from networksecurity.constants.model_trainer import FINAL_MODEL_PATH
 
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, UploadFile, Request, File
@@ -55,16 +55,11 @@ async def train_route():
 @app.post('/predict')
 async def predict_route(request:Request, file:UploadFile=File(...)): # UplaodFIle will allow to upload files in website
     try:
-        # read data from file
-        data = pd.read_csv(file.file)
-
-        # load model AND DO PREDICTION
-        network_classifier = load_object(FINAL_MODEL_PATH)
-        y_pred = network_classifier.predict(data)
-        data['prediction'] = y_pred     # add prediction to dataframe
+        prediction_pipeline = PredictionPipeline()
+        output_data = prediction_pipeline.start_batch_prediction(file.file)
 
         # convert dataframe to table for fast api website
-        table_html = data.to_html(classes='table, table-striped')
+        table_html = output_data.to_html(classes='table, table-striped')
         return templates.TemplateResponse("table.html", {"request":request, "table":table_html})
 
     except Exception as e:

@@ -1,0 +1,12 @@
+[ 2026-06-13 16:21:37,833 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 16:21:37,844 ] 107 helpers.py - INFO -Accessing as aryansavant31
+[ 2026-06-13 16:21:44,363 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/repos/aryansavant31/network_security "HTTP/1.1 200 OK"
+[ 2026-06-13 16:21:53,177 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 16:21:53,180 ] 107 helpers.py - INFO -Initialized MLflow to track repo "aryansavant31/network_security"
+[ 2026-06-13 16:21:53,183 ] 107 helpers.py - INFO -Repository aryansavant31/network_security initialized!
+[ 2026-06-13 16:21:53,368 ] 50 common.py - INFO -Creating directory at prediction_artifacts\13_06_2026_16_21_53
+[ 2026-06-13 16:21:55,740 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb
+[ 2026-06-13 16:21:55,887 ] 25 common.py - INFO -yaml file: schema.yaml loaded successfully
+[ 2026-06-13 16:21:56,040 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_21_53\2_data_validation\drift_report\report.yaml
+[ 2026-06-13 16:21:56,041 ] 76 __init__.py - INFO -The incoming data is valid
+[ 2026-06-13 16:21:56,044 ] 40 common.py - INFO -yaml file saved sucessfully at prediction_artifacts\13_06_2026_16_21_53\2_data_validation\valid_status\status.yaml

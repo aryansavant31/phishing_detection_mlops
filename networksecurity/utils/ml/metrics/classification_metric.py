@@ -1,6 +1,6 @@
 from sklearn.metrics import f1_score, precision_score, recall_score
 from networksecurity.exceptions.custom_exception import NetworkSecurityException
-from networksecurity.entity.artifact_entity import ClassificationMetricArtifact
+from networksecurity.entity.training_pipeline.artifact_entity import ClassificationMetricArtifact
 import sys
 import numpy as np
 

@@ -2,14 +2,14 @@ import sys
 import os
 from networksecurity.logging.logger import logger
 from networksecurity.exceptions.custom_exception import NetworkSecurityException
-from networksecurity.entity.config_entity import ModelTrainerConfig
-from networksecurity.entity.artifact_entity import (ModelTrainerArtifact, ClassificationMetricArtifact, 
+from networksecurity.entity.training_pipeline.config_entity import ModelTrainerConfig, TrainingPipelineConfig
+from networksecurity.entity.training_pipeline.artifact_entity import (ModelTrainerArtifact, ClassificationMetricArtifact, 
                                                     DataTransformationArtifact)
 from networksecurity.utils.common import load_numpy_array, read_yaml, load_object, save_object
 from networksecurity.utils.ml.metrics.classification_metric import get_classification_metrics
 from networksecurity.utils.ml.model.model_factory import MODELS
 from networksecurity.utils.ml.model.classifier import Classifier
-from networksecurity.constants.model_trainer import MODEL_HYPERPARAMS_FILE_PATH
+from networksecurity.constants.training_pipeline.model_trainer import MODEL_HYPERPARAMS_FILE_PATH
 from networksecurity.utils.ml.training.model_selection import get_best_model
 import mlflow
 import dagshub
@@ -36,7 +36,7 @@ class ModelTrainerComponent:
             classifier = Classifier(preprocessor, model)
             # save classifier as pickle
             save_object(self.model_trainer_config.trained_model_file_path, classifier)
-            save_object(self.model_trainer_config.final_model_file_path, classifier)
+            save_object(TrainingPipelineConfig().final_model_path, classifier)
 
         except Exception as e:
             raise NetworkSecurityException(e, sys)

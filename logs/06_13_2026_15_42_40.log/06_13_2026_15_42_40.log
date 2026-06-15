@@ -1,0 +1,32 @@
+[ 2026-06-13 15:42:48,541 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:42:48,549 ] 107 helpers.py - INFO -Accessing as aryansavant31
+[ 2026-06-13 15:42:51,119 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/repos/aryansavant31/network_security "HTTP/1.1 200 OK"
+[ 2026-06-13 15:42:51,801 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:42:51,804 ] 107 helpers.py - INFO -Initialized MLflow to track repo "aryansavant31/network_security"
+[ 2026-06-13 15:42:51,805 ] 107 helpers.py - INFO -Repository aryansavant31/network_security initialized!
+[ 2026-06-13 15:42:51,976 ] 25 common.py - INFO -yaml file: config\config.yaml loaded successfully
+[ 2026-06-13 15:42:51,977 ] 50 common.py - INFO -Creating directory at training_artifacts\06_13_2026_15_42_42
+[ 2026-06-13 15:42:51,978 ] 24 training_pipeline.py - INFO ->>>>> Starting data ingestion <<<<<
+[ 2026-06-13 15:42:54,455 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb
+[ 2026-06-13 15:42:54,596 ] 49 __init__.py - INFO -Export raw data into training_artifacts\06_13_2026_15_42_42\1_data_ingestion\feature_store
+[ 2026-06-13 15:42:54,606 ] 60 __init__.py - INFO -Split data into train and test sets
+[ 2026-06-13 15:42:54,755 ] 68 __init__.py - INFO -Exported train and test data to training_artifacts\06_13_2026_15_42_42\1_data_ingestion\ingested
+[ 2026-06-13 15:42:54,757 ] 28 training_pipeline.py - INFO - >>>>> Data ingestion completed <<<<<
+[ 2026-06-13 15:42:54,758 ] 36 training_pipeline.py - INFO ->>>>> Starting data validation <<<<<
+[ 2026-06-13 15:42:54,765 ] 25 common.py - INFO -yaml file: schema.yaml loaded successfully
+[ 2026-06-13 15:42:55,052 ] 40 common.py - INFO -yaml file saved sucessfully at training_artifacts\06_13_2026_15_42_42\2_data_validation\drift_report\report.yaml
+[ 2026-06-13 15:42:55,052 ] 79 __init__.py - INFO -The incoming data is valid
+[ 2026-06-13 15:42:55,055 ] 40 common.py - INFO -yaml file saved sucessfully at training_artifacts\06_13_2026_15_42_42\2_data_validation\valid_status\status.yaml
+[ 2026-06-13 15:42:55,056 ] 41 training_pipeline.py - INFO ->>>>> Data validation completed <<<<<
+[ 2026-06-13 15:42:55,056 ] 49 training_pipeline.py - INFO ->>>>> Starting data transformation <<<<<
+[ 2026-06-13 15:42:55,129 ] 50 data_transformation.py - INFO -Initilize KNN imputer with parameters: {'n_neighbors': 3, 'weights': 'uniform'}
+[ 2026-06-13 15:42:55,154 ] 63 common.py - INFO -Numpy file saved sucessfully at training_artifacts\06_13_2026_15_42_42\3_data_transformation\transformed_data\train.npy
+[ 2026-06-13 15:42:55,158 ] 63 common.py - INFO -Numpy file saved sucessfully at training_artifacts\06_13_2026_15_42_42\3_data_transformation\transformed_data\test.npy
+[ 2026-06-13 15:42:55,167 ] 84 common.py - INFO -Object file saved sucessfully at training_artifacts\06_13_2026_15_42_42\3_data_transformation\transformation_object\preprocessing_config.pkl
+[ 2026-06-13 15:42:55,171 ] 54 training_pipeline.py - INFO ->>>>> Data transformation completed <<<<<
+[ 2026-06-13 15:42:55,171 ] 62 training_pipeline.py - INFO ->>>>> Starting model trainer <<<<<
+[ 2026-06-13 15:42:55,202 ] 25 common.py - INFO -yaml file: model_hyperparams.yaml loaded successfully
+[ 2026-06-13 15:44:09,600 ] 84 common.py - INFO -Object file saved sucessfully at training_artifacts\06_13_2026_15_42_42\4_model_trainer\trained_model\model.pkl
+[ 2026-06-13 15:44:09,606 ] 84 common.py - INFO -Object file saved sucessfully at final_model\classifier.pkl
+[ 2026-06-13 15:44:09,658 ] 105 model_trainer.py - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='training_artifacts\\06_13_2026_15_42_42\\4_model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.990620088221873, precision=0.9888652697641461, recall=0.9923811458756603), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9880880274581062, precision=0.9855014095851792, recall=0.9906882591093117))
+[ 2026-06-13 15:44:09,661 ] 67 training_pipeline.py - INFO ->>>>> Model training completed <<<<<

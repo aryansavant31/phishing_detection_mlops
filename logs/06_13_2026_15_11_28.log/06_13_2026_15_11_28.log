@@ -1,0 +1,29 @@
+[ 2026-06-13 15:11:37,142 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:11:37,153 ] 107 helpers.py - INFO -Accessing as aryansavant31
+[ 2026-06-13 15:11:41,719 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/repos/aryansavant31/network_security "HTTP/1.1 200 OK"
+[ 2026-06-13 15:11:47,528 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:11:47,530 ] 107 helpers.py - INFO -Initialized MLflow to track repo "aryansavant31/network_security"
+[ 2026-06-13 15:11:47,539 ] 107 helpers.py - INFO -Repository aryansavant31/network_security initialized!
+[ 2026-06-13 15:11:47,685 ] 25 common.py - INFO -yaml file: config\config.yaml loaded successfully
+[ 2026-06-13 15:11:47,686 ] 50 common.py - INFO -Creating directory at training_artifacts\06_13_2026_15_11_29
+[ 2026-06-13 15:11:47,687 ] 24 training_pipeline.py - INFO ->>>>> Starting data ingestion <<<<<
+[ 2026-06-13 15:11:50,137 ] 39 __init__.py - INFO -Imported collection as dataframe from mongodb
+[ 2026-06-13 15:11:50,269 ] 49 __init__.py - INFO -Export raw data into training_artifacts\06_13_2026_15_11_29\1_data_ingestion\feature_store
+[ 2026-06-13 15:11:50,276 ] 60 __init__.py - INFO -Split data into train and test sets
+[ 2026-06-13 15:11:50,404 ] 68 __init__.py - INFO -Exported train and test data to training_artifacts\06_13_2026_15_11_29\1_data_ingestion\ingested
+[ 2026-06-13 15:11:50,404 ] 28 training_pipeline.py - INFO - >>>>> Data ingestion completed <<<<<
+[ 2026-06-13 15:11:50,405 ] 36 training_pipeline.py - INFO ->>>>> Starting data validation <<<<<
+[ 2026-06-13 15:11:50,413 ] 25 common.py - INFO -yaml file: schema.yaml loaded successfully
+[ 2026-06-13 15:11:50,700 ] 40 common.py - INFO -yaml file saved sucessfully at training_artifacts\06_13_2026_15_11_29\2_data_validation\drift_report\report.yaml
+[ 2026-06-13 15:11:50,700 ] 79 __init__.py - INFO -The incoming data is valid
+[ 2026-06-13 15:11:50,703 ] 40 common.py - INFO -yaml file saved sucessfully at training_artifacts\06_13_2026_15_11_29\2_data_validation\valid_status\status.yaml
+[ 2026-06-13 15:11:50,703 ] 41 training_pipeline.py - INFO ->>>>> Data validation completed <<<<<
+[ 2026-06-13 15:11:50,704 ] 49 training_pipeline.py - INFO ->>>>> Starting data transformation <<<<<
+[ 2026-06-13 15:11:50,760 ] 50 data_transformation.py - INFO -Initilize KNN imputer with parameters: {'n_neighbors': 3, 'weights': 'uniform'}
+[ 2026-06-13 15:11:50,791 ] 63 common.py - INFO -Numpy file saved sucessfully at training_artifacts\06_13_2026_15_11_29\3_data_transformation\transformed_data\train.npy
+[ 2026-06-13 15:11:50,795 ] 63 common.py - INFO -Numpy file saved sucessfully at training_artifacts\06_13_2026_15_11_29\3_data_transformation\transformed_data\test.npy
+[ 2026-06-13 15:11:50,802 ] 84 common.py - INFO -Object file saved sucessfully at training_artifacts\06_13_2026_15_11_29\3_data_transformation\transformation_object\preprocessing_config.pkl
+[ 2026-06-13 15:11:50,803 ] 54 training_pipeline.py - INFO ->>>>> Data transformation completed <<<<<
+[ 2026-06-13 15:11:50,804 ] 62 training_pipeline.py - INFO ->>>>> Starting model trainer <<<<<
+[ 2026-06-13 15:11:50,849 ] 25 common.py - INFO -yaml file: model_hyperparams.yaml loaded successfully
+[ 2026-06-13 15:13:06,596 ] 84 common.py - INFO -Object file saved sucessfully at training_artifacts\06_13_2026_15_11_29\4_model_trainer\trained_model\model.pkl

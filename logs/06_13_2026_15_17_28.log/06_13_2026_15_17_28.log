@@ -1,0 +1,6 @@
+[ 2026-06-13 15:17:38,672 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:17:38,678 ] 107 helpers.py - INFO -Accessing as aryansavant31
+[ 2026-06-13 15:17:51,863 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/repos/aryansavant31/network_security "HTTP/1.1 200 OK"
+[ 2026-06-13 15:18:04,464 ] 1025 _client.py - INFO -HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:18:04,466 ] 107 helpers.py - INFO -Initialized MLflow to track repo "aryansavant31/network_security"
+[ 2026-06-13 15:18:04,467 ] 107 helpers.py - INFO -Repository aryansavant31/network_security initialized!

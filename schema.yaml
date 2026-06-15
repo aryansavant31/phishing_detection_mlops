@@ -29,7 +29,7 @@ columns:
   - Google_Index: int64
   - Links_pointing_to_page: int64
   - Statistical_report: int64
-  - Result: int64
+#  - Result: int64
 
 
 numerical_columns:
