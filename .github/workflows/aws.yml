@@ -23,7 +23,7 @@ jobs:
     build-and-push-ecr-image:
         name: Continuous Delivery
         needs: integration
-        runs-on: ubantu-latest
+        runs-on: ubuntu-latest
         steps:
           - name: Checkout code
             uses: actions/checkout@v3
