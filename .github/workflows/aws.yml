@@ -55,6 +55,6 @@ jobs:
               # build docker image first and push it to ecr (elastic container registery).
               # tHEN from ECR it can be deployed to Elastic compute 
               |
-              docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+              docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
               docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
               echo "::set-output name-image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
